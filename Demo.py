@@ -1,25 +1,20 @@
-import sys
-
 import cv2
 from keras.models import load_model
 import numpy as np
-
-
 from src.utils.datasets import get_labels
-from src.utils.inference import detect_faces
 from src.utils.inference import draw_text
 from src.utils.inference import draw_bounding_box
 from src.utils.inference import apply_offsets
-from src.utils.inference import load_detection_model
-from src.utils.inference import load_image
 from src.utils.preprocessor import preprocess_input
 import dlib
 from src.utils.datasets import Base_path
+import os
 
 # parameters for loading data and images
-image_path = 'test_image.jpg'
+image_path = 'test_image.jpg' # path of the image
+directory_path = os.path.basename(image_path)
 
-emotion_model_path = 'fc_key.hdf5'
+emotion_model_path = Base_path + '/trained_models/model A_ferplus.hdf5'
 emotion_labels = get_labels('ferplus')
 font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -36,7 +31,7 @@ emotion_target_size = emotion_classifier.input_shape[1:3]
 # gender_target_size = gender_classifier.input_shape[1:3]
 
 # loading images
-rgb_image = cv2.imread(Base_path + '/images/12_angry_men.jpg')
+rgb_image = cv2.imread(image_path)
 gray_image = cv2.cvtColor(rgb_image,cv2.COLOR_BGR2GRAY)
 gray_image = np.squeeze(gray_image)
 gray_image = gray_image.astype('uint8')
@@ -61,6 +56,6 @@ for face_coordinates in faces:
     color = (0, 0, 255)
 
     draw_bounding_box(face_coordinates, rgb_image, color)
-    draw_text(face_coordinates, rgb_image, emotion_text, color, 0, -50, 1, 2)
+    draw_text(face_coordinates, rgb_image, emotion_text, color, 0, 0, 1, 1)
 
-cv2.imwrite('../images/predicted_test_image.png', rgb_image)
+cv2.imwrite(directory_path + '/predicted_result.png', rgb_image)
