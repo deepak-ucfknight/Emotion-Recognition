@@ -13,7 +13,7 @@ To see a demo,
 1. give the name of the model to load in demo.py file
 2. place the image to be tested in images directory
 3. run the demo.py file
-4. new file called ‘predicted_test_image’ wil be generate containing the prediction
+4. new file called ‘predicted_result’ wil be generate containing the prediction
 
 To generate key-points
 
