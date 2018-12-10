@@ -28,6 +28,7 @@ Datasets,
 CK and CK+: http://www.pitt.edu/~emotion/ck-spread.htm
 FER2013: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
 FER-plus: https://github.com/Microsoft/FERPlus
+We have created one hot encoding for all the ground truth labels in the dataset directory as well, use them if needed
 
 Environment Setup
 
