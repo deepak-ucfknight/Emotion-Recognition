@@ -23,6 +23,12 @@ To generate key-points
 3. set the path variables in keypointgenerator.py file to the folder where the images are present
 4. run the keypointgenerator.py file
 
+Datasets,
+
+CK and CK+: http://www.pitt.edu/~emotion/ck-spread.htm
+FER2013: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
+FER-plus: https://github.com/Microsoft/FERPlus
+
 Acknowledgements,
 
 We sincerely thank Octavio Arriaga et al., for their codes posted in GitHub at https://github.com/oarriaga/face_classification
