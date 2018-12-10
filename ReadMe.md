@@ -31,11 +31,11 @@ FER-plus: https://github.com/Microsoft/FERPlus
 
 Environment Setup
 
-Install miniconda or Anaconda
-In the command prompt type, conda env create -f environment.yml
-this will create all the necessary setup related for the project
-activate the environment by typing conda activate gpu_env in command prompt
-deactivae the environment by typing conda deactivate
+1. Install miniconda or Anaconda
+2. In the command prompt type, conda env create -f environment.yml
+3. this will create all the necessary setup related for the project
+4. activate the environment by typing conda activate gpu_env in command prompt
+5. deactivae the environment by typing conda deactivate
 
 Acknowledgements,
 
