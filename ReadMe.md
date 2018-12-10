@@ -29,6 +29,14 @@ CK and CK+: http://www.pitt.edu/~emotion/ck-spread.htm
 FER2013: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
 FER-plus: https://github.com/Microsoft/FERPlus
 
+Environment Setup
+
+Install miniconda or Anaconda
+In the command prompt type, conda env create -f environment.yml
+this will create all the necessary setup related for the project
+activate the environment by typing conda activate gpu_env in command prompt
+deactivae the environment by typing conda deactivate
+
 Acknowledgements,
 
 We sincerely thank Octavio Arriaga et al., for their codes posted in GitHub at https://github.com/oarriaga/face_classification
