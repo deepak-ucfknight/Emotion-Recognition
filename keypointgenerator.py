@@ -10,6 +10,11 @@ import pathlib
 filepath = "Path of the folder which contains the images"
 save = "Path of the folder where we want to save the keypoint generated images"
 # vaal = os.path.isfile("/Users/deez/dlibs/PrivateTest/0.jpg")
+
+# place all the files for which keys points has to be genrerated in a folder and give the path of the folder in filepath
+# for generating images from dataset one can use functions provided in datasets.py file
+# for FER images we recommend to create 3 separate directories to store the images, Training, PrivateTest, PublicTest
+# for CK+ images one can put all the images in a single folder
 files = glob.glob(filepath)
 # construct the argument parser and parse the arguments
 

@@ -2,7 +2,7 @@ from keras.callbacks import CSVLogger, ModelCheckpoint, EarlyStopping
 from keras.callbacks import ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
 
-from src.models.cnn import final_model, mini_XCEPTION
+from src.models.cnn import final_model, mini_XCEPTION, oriaga
 from src.utils.datasets import DataManager
 from src.utils.datasets import split_data
 from src.utils.preprocessor import preprocess_input
@@ -10,12 +10,14 @@ from src.utils.trainingmonitor import TrainingMonitor
 import os
 
 # parameters
-batch_size = 32
+batch_size = 128
 num_epochs = 10000
-input_shape = (256, 256, 1)
-validation_split = .1
+input_shape = (64, 64, 1)
+validation_split = .2
 verbose = 1
-num_classes = 8
+fer13_num_classes = 7
+ferplus_num_classes = 10
+ckplus_num_classes = 8
 patience = 100
 base_path = '../trained_models/emotion_models/'
 output_path = '../output/'
@@ -31,14 +33,15 @@ data_generator = ImageDataGenerator(
                         horizontal_flip=True)
 
 # model parameters/compilation
-model = final_model(input_shape, num_classes)
-# model = mini_XCEPTION(input_shape,num_classes)
+# model = oriaga(input_shape, num_classes)
+# model = final_model(input_shape,num_classes)
+model = mini_XCEPTION(input_shape,ckplus_num_classes)
 model.compile(optimizer='adam', loss='categorical_crossentropy',
               metrics=['accuracy'])
 model.summary()
 
 
-datasets = ['ckplus']
+datasets = ['ckpluskey']
 for dataset_name in datasets:
     print('Training dataset:', dataset_name)
 
